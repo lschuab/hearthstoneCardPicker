@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/cards" method="post">
+    <label for="mana">Mana Cost</label>
+    <input type="number" name="mana">
+    <label for="attack">Attack</label>
+    <input type="number" name="attack">
+    <label for="health">Health</label>
+    <input type="number" name="health">
+    <label for="description">Description</label>
+    <input type="text" name="description">
+    <input type="submit">
+  </form>
+  <h3>Your current list:</h3>
+  <%for (const card of list) {%>
+    <hr>
+    <div>
+      <b><%=card.description%></b>
+      <p>Mana Cost: <%=card.mana%></p>
+      <p>Attack: <%=card.attack%></p>
+      <p>Health: <%=card.health%></p>
+      <a href="/list/remove/<%=card.id%>">Remove from list</a>
+    </div>
+  <%}%>
+  <hr>
+  <h1>All cards:</h1>
+  <%for (const card of cards) {%>
+    <hr>
+    <div>
+      <b><%=card.description%></b>
+      <p>Mana Cost: <%=card.mana%></p>
+      <p>Attack: <%=card.attack%></p>
+      <p>Health: <%=card.health%></p>
+      <a href="/list/add/<%=card.id%>">Add to list</a>
+    </div>
+  <%}%>
+</body>
+</html>

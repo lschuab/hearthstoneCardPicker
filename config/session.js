@@ -18,4 +18,4 @@ module.exports = function(app){
       saveUninitialized: false,
       store: store
   }));
-}
+};

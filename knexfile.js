@@ -2,7 +2,7 @@ module.exports = {
   development: {
       client: 'pg',
       connection: {
-        database: "users",
+        database: "hearthstone_card_picker",
         host: "localhost"
       },
       migrations: {
